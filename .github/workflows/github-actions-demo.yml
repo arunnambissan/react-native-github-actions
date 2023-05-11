@@ -13,6 +13,10 @@ on:
         description: 'release_version'
         required: true
         default: 'release_'
+      version:
+        description: 'env'
+        required: true
+        default: 'qa1'
 permissions:
   contents: write
 jobs:
@@ -88,7 +92,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tag_name: ${{ github.event.inputs.version }}
-          name: Release ${{ github.event.inputs.version }}
+          name: ${{ github.event.inputs.version }}
           draft: false
           prerelease: false
           files: ReactNativeGitActions/app-release.apk
