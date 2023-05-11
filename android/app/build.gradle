@@ -118,7 +118,7 @@ android {
             keyPassword 'android'
         }
         release {
-                storeFile = file("keystore/android_keystore.jks")
+                storeFile = file("keystore/my-upload-key.keystore")
                 storePassword System.getenv("MYAPP_UPLOAD_STORE_PASSWORD")
                 keyAlias System.getenv("MYAPP_UPLOAD_KEY_ALIAS")
                 keyPassword System.getenv("MYAPP_UPLOAD_KEY_PASSWORD")
