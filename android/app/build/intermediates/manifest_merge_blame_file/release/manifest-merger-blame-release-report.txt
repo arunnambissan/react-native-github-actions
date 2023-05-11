@@ -1,0 +1,82 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.reactnativegitactions"
+4    android:versionCode="1"
+5    android:versionName="1.0" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+8-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml
+9        android:targetSdkVersion="33" />
+9-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml
+10
+11    <uses-permission android:name="android.permission.INTERNET" />
+11-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:3:5-67
+11-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:3:22-64
+12
+13    <application
+13-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:5:5-24:19
+14        android:name="com.reactnativegitactions.MainApplication"
+14-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:6:7-38
+15        android:allowBackup="false"
+15-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:10:7-34
+16        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+16-->[androidx.core:core:1.7.0] /Users/arund/.gradle/caches/transforms-3/3994986e4b6f29f228dfe8fb9122f0d7/transformed/core-1.7.0/AndroidManifest.xml:24:18-86
+17        android:icon="@mipmap/ic_launcher"
+17-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:8:7-41
+18        android:label="@string/app_name"
+18-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:7:7-39
+19        android:roundIcon="@mipmap/ic_launcher_round"
+19-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:9:7-52
+20        android:theme="@style/AppTheme" >
+20-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:11:7-38
+21        <activity
+21-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:12:7-23:18
+22            android:name="com.reactnativegitactions.MainActivity"
+22-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:13:9-37
+23            android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize|smallestScreenSize|uiMode"
+23-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:15:9-118
+24            android:exported="true"
+24-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:18:9-32
+25            android:label="@string/app_name"
+25-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:14:9-41
+26            android:launchMode="singleTask"
+26-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:16:9-40
+27            android:windowSoftInputMode="adjustResize" >
+27-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:17:9-51
+28            <intent-filter>
+28-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:19:9-22:25
+29                <action android:name="android.intent.action.MAIN" />
+29-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:20:13-65
+29-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:20:21-62
+30
+31                <category android:name="android.intent.category.LAUNCHER" />
+31-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:21:13-73
+31-->/Users/arund/Documents/projects/keystone/react-native-github-actions/android/app/src/main/AndroidManifest.xml:21:23-70
+32            </intent-filter>
+33        </activity>
+34
+35        <provider
+35-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:26:9-34:20
+36            android:name="androidx.startup.InitializationProvider"
+36-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:27:13-67
+37            android:authorities="com.reactnativegitactions.androidx-startup"
+37-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:28:13-68
+38            android:exported="false" >
+38-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:29:13-37
+39            <meta-data
+39-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:31:13-33:52
+40                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+40-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:32:17-75
+41                android:value="androidx.startup" />
+41-->[androidx.emoji2:emoji2:1.0.0] /Users/arund/.gradle/caches/transforms-3/c1cd3487ee93faa69a46c921c06f102e/transformed/jetified-emoji2-1.0.0/AndroidManifest.xml:33:17-49
+42            <meta-data
+42-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/arund/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:31:13-33:52
+43                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+43-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/arund/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:32:17-78
+44                android:value="androidx.startup" />
+44-->[androidx.lifecycle:lifecycle-process:2.4.0] /Users/arund/.gradle/caches/transforms-3/afe3a0cc82c76a7c864d2efd8324d92e/transformed/jetified-lifecycle-process-2.4.0/AndroidManifest.xml:33:17-49
+45        </provider>
+46    </application>
+47
+48</manifest>

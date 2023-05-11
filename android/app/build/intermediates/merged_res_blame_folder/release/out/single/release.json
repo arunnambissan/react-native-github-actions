@@ -1,0 +1,50 @@
+[
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/drawable-mdpi_node_modules_reactnative_libraries_newappscreen_components_logo.png.flat",
+        "source": "com.reactnativegitactions.app-react-17:/drawable-mdpi/node_modules_reactnative_libraries_newappscreen_components_logo.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xhdpi_ic_launcher_round.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xxxhdpi_ic_launcher_round.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xxxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-mdpi_ic_launcher_round.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xxhdpi_ic_launcher_round.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xxhdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-hdpi_ic_launcher_round.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-hdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "com.reactnativegitactions.app-main-23:/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "com.reactnativegitactions.app-merged_res-22:/drawable_rn_edit_text_material.xml.flat",
+        "source": "com.reactnativegitactions.app-main-23:/drawable/rn_edit_text_material.xml"
+    }
+]
