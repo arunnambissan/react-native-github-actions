@@ -88,4 +88,4 @@ jobs:
           name: Release ${{ github.event.inputs.version }}
           draft: false
           prerelease: false
-          files: app_release.apk
+          files: /home/runner/work/react-native-github-actions/react-native-github-actions/ReactNativeGitActions/app_release.apk
