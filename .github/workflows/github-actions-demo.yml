@@ -70,7 +70,8 @@ jobs:
         uses: actions/upload-artifact@v3.1.2
         with:
           name: ReactNativeGitActions
-          path: android/app/build/outputs/apk/release/app_release_${{ github.event.inputs.version }}.apk
+          # path: android/app/build/outputs/apk/release/app_release_${{ github.event.inputs.version }}.apk
+          path: android/app/build/outputs/apk/release/app-release.apk
   release:
     name: Release APK
     needs: build
@@ -90,4 +91,4 @@ jobs:
           name: Release ${{ github.event.inputs.version }}
           draft: false
           prerelease: false
-          files: ReactNativeGitActions/app_release_${{ github.event.inputs.version }}.apk
+          files: ReactNativeGitActions/app-release.apk
