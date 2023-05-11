@@ -1,0 +1,13 @@
+current directory: /Users/arund/Documents/projects/keystone/ReactNativeGitActions/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+/Users/arund/.rvm/rubies/ruby-3.1.1/bin/ruby -I /Users/arund/.rvm/rubies/ruby-3.1.1/lib/ruby/3.1.0 -r ./siteconf20230511-26040-kpafs0.rb extconf.rb
+creating Makefile
+
+current directory: /Users/arund/Documents/projects/keystone/ReactNativeGitActions/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= clean
+
+current directory: /Users/arund/Documents/projects/keystone/ReactNativeGitActions/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\=
+make: Nothing to be done for `all'.
+
+current directory: /Users/arund/Documents/projects/keystone/ReactNativeGitActions/vendor/bundle/ruby/3.1.0/gems/json-2.6.3/ext/json
+make DESTDIR\= install

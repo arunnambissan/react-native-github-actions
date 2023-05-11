@@ -1,0 +1,7 @@
+node_modules
+# CocoaPods
+/ios/Pods
+/ios/Podfile.lock
+
+# SPM
+/ios/*.xcworkspace/xcshareddata/swiftpm/Package.resolved
