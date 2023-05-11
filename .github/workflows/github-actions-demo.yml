@@ -49,7 +49,7 @@ jobs:
         with:
           fileName: 'my-upload-key.keystore'
           fileDir: '/home/runner/work/react-native-github-actions/react-native-github-actions/android/app/keystore/'
-          encodedString: ${{ secrets.KEYSTORE }}
+          encodedString: ${{ secrets.MYAPP_UPLOAD_STORE_FILE }}
 
       # Build and sign APK 
       - name: Build APK
