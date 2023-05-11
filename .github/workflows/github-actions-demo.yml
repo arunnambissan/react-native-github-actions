@@ -39,7 +39,7 @@ jobs:
           distribution: 'temurin'
           cache: gradle
       - name: Grant execute permission for gradlew
-        run: chmod +x gradlew
+        run: chmod +x android/gradlew
 
       # Here we need to decode keystore.jks from base64 string and place it
       # in the folder specified in the release signing configuration
