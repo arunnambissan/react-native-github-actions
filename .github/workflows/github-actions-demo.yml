@@ -88,4 +88,4 @@ jobs:
           name: Release v${{ github.event.inputs.version }}
           draft: false
           prerelease: false
-          files: ReactNativeGitActions/ReactNativeGitActions_${{ github.event.inputs.version }}.apk
+          files: ReactNativeGitActions/app_release.apk
