@@ -1,5 +1,5 @@
-name: Build, Sign and Release APK
-run-name: Build, Sign and Release APK
+name: Build Sign and Release APK
+run-name: Build Sign and Release APK
 on:
   workflow_dispatch:
     inputs:
