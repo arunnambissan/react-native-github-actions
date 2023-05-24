@@ -1,0 +1,95 @@
+name: Build, Sign and Release APK
+run-name: Build, Sign and Release APK
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "release_version"
+        required: true
+        default: ""
+      env:
+        description: "env"
+        required: true
+        default: "dev1"
+permissions:
+  contents: write
+jobs:
+  build:
+    name: Build Signed APK
+    strategy:
+      matrix:
+        app: [mch, gza, ibi]
+        os: [ubuntu-latest]
+
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up JDK 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: gradle
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x android/gradlew
+
+      - name: Install npm packages
+        run: yarn
+
+      # - name: Run tests
+      #   run: yarn test
+
+      # Here we need to decode keystore.jks from base64 string and place it
+      # in the folder specified in the release signing configuration
+      - name: Decode Keystore
+        id: decode_keystore
+        uses: timheuer/base64-to-file@v1.2
+        with:
+          fileName: "keystone-dev-temp-key.keystore"
+          fileDir: "/home/runner/work/keystone-mobile/keystone-mobile/android/app/keystore/"
+          encodedString: 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
+
+      # Build and sign APK
+      - name: Build APK
+        run: yarn build-release-apk
+        env:
+          SIGNING_KEY_ALIAS: keystone-dev-temp--key-alias
+          SIGNING_KEY_PASSWORD: devtemp
+          SIGNING_STORE_PASSWORD: devtemp
+          # SIGNING_KEY_ALIAS: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
+          # SIGNING_KEY_PASSWORD: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
+          # SIGNING_STORE_PASSWORD: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
+
+      # Show information about the APK's signing certificates
+      - name: Verify Signature
+        run: $ANDROID_SDK_ROOT/build-tools/33.0.1/apksigner verify --print-certs android/app/build/outputs/apk/release/app-release.apk
+
+      # Save the APK after the Build job is complete to publish it as a Github release in the next job
+      - name: Upload APK
+        uses: actions/upload-artifact@v3.1.2
+        with:
+          name: ${{ matrix.app }}
+          # path: android/app/build/outputs/apk/release/app_release_${{ github.event.inputs.version }}.apk
+          path: android/app/build/outputs/apk/release/app-release.apk
+  # release:
+  #   name: Release APK
+  #   needs: build
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - name: Download APK from build
+  #       uses: actions/download-artifact@v1
+  #       with:
+  #         name: ReactNativeGitActions
+  #     - name: Create Release
+  #       id: create_release
+  #       uses: softprops/action-gh-release@v1
+  #       env:
+  #         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+  #       with:
+  #         tag_name: ${{ github.event.inputs.version }}
+  #         name: ${{ github.event.inputs.version }}
+  #         draft: false
+  #         prerelease: false
+  #         files: ReactNativeGitActions/app-release.apk
