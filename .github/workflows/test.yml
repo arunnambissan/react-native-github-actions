@@ -1,16 +1,19 @@
 name: Build Sign and Release APK
 run-name: Build Sign and Release APK
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "release_version"
-        required: true
-        default: ""
-      env:
-        description: "env"
-        required: true
-        default: "dev1"
+  pull_request:
+    branches:
+      - test-patch
+#   workflow_dispatch:
+#     inputs:
+#       version:
+#         description: "release_version"
+#         required: true
+#         default: ""
+#       env:
+#         description: "env"
+#         required: true
+#         default: "dev1"
 permissions:
   contents: write
 jobs:
