@@ -25,55 +25,55 @@ jobs:
         env:
           encodedString: ${{ secrets['MYAPP_' + $abc + '_STORE_FILE'] }}
         run: echo $encodingString
-      - name: Grant execute permission for gradlew
-        run: chmod +x android/gradlew
+#       - name: Grant execute permission for gradlew
+#         run: chmod +x android/gradlew
 
-      # Here we need to decode keystore file from base64 string and place it
-      # in the folder specified in the release signing configuration
-      - name: Decode Keystore
-        id: decode_keystore
-        uses: timheuer/base64-to-file@v1.2
-        with:
-          fileName: "my-upload-key.keystore"
-          fileDir: "/home/runner/work/react-native-github-actions/react-native-github-actions/android/app/keystore/"
-          encodedString: ${{ secrets['MYAPP_' + $abc + '_STORE_FILE'] }}
+#       # Here we need to decode keystore file from base64 string and place it
+#       # in the folder specified in the release signing configuration
+#       - name: Decode Keystore
+#         id: decode_keystore
+#         uses: timheuer/base64-to-file@v1.2
+#         with:
+#           fileName: "my-upload-key.keystore"
+#           fileDir: "/home/runner/work/react-native-github-actions/react-native-github-actions/android/app/keystore/"
+#           encodedString: ${{ secrets['MYAPP_' + $abc + '_STORE_FILE'] }}
 
-      # Build and sign APK
-      - name: Build APK
-        run: yarn run publish
-        env:
-          SIGNING_KEY_ALIAS: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
-          SIGNING_KEY_PASSWORD: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
-          SIGNING_STORE_PASSWORD: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
+#       # Build and sign APK
+#       - name: Build APK
+#         run: yarn run publish
+#         env:
+#           SIGNING_KEY_ALIAS: ${{ secrets.MYAPP_UPLOAD_KEY_ALIAS }}
+#           SIGNING_KEY_PASSWORD: ${{ secrets.MYAPP_UPLOAD_KEY_PASSWORD }}
+#           SIGNING_STORE_PASSWORD: ${{ secrets.MYAPP_UPLOAD_STORE_PASSWORD }}
 
-      # Show information about the APK's signing certificates
-      - name: Verify Signature
-        run: $ANDROID_SDK_ROOT/build-tools/33.0.1/apksigner verify --print-certs android/app/build/outputs/apk/release/app-release.apk
+#       # Show information about the APK's signing certificates
+#       - name: Verify Signature
+#         run: $ANDROID_SDK_ROOT/build-tools/33.0.1/apksigner verify --print-certs android/app/build/outputs/apk/release/app-release.apk
 
-      # Save the APK after the Build job is complete to publish it as a Github release in the next job
-      - name: Upload APK
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: ReactNativeGitActions
-          # path: android/app/build/outputs/apk/release/app_release_${{ github.event.inputs.version }}.apk
-          path: android/app/build/outputs/apk/release/app-release.apk
-  release:
-    name: Release APK
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-      - name: Download APK from build
-        uses: actions/download-artifact@v1
-        with:
-          name: ReactNativeGitActions
-      - name: Create Release
-        id: create_release
-        uses: softprops/action-gh-release@v1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          tag_name: ${{ github.event.inputs.version }}
-          name: ${{ github.event.inputs.version }}
-          draft: false
-          prerelease: false
-          files: ReactNativeGitActions/app-release.apk
+#       # Save the APK after the Build job is complete to publish it as a Github release in the next job
+#       - name: Upload APK
+#         uses: actions/upload-artifact@v3.1.2
+#         with:
+#           name: ReactNativeGitActions
+#           # path: android/app/build/outputs/apk/release/app_release_${{ github.event.inputs.version }}.apk
+#           path: android/app/build/outputs/apk/release/app-release.apk
+#   release:
+#     name: Release APK
+#     needs: build
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Download APK from build
+#         uses: actions/download-artifact@v1
+#         with:
+#           name: ReactNativeGitActions
+#       - name: Create Release
+#         id: create_release
+#         uses: softprops/action-gh-release@v1
+#         env:
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#         with:
+#           tag_name: ${{ github.event.inputs.version }}
+#           name: ${{ github.event.inputs.version }}
+#           draft: false
+#           prerelease: false
+#           files: ReactNativeGitActions/app-release.apk
