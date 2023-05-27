@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v3
       - name: init test
         env:
-          encodedString: ${{ secrets['MYAPP_$abc_STORE_FILE'] }}
+          encodedString: ${{ secrets['MYAPP_$abc_KEY_PASSWORD'] }}
         run: echo $encodingString
 #       - name: Grant execute permission for gradlew
 #         run: chmod +x android/gradlew
