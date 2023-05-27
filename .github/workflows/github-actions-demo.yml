@@ -17,8 +17,14 @@ jobs:
   build:
     name: Build Signed APK
     runs-on: ubuntu-latest
+    env:
+      abc: UPLOAD
     steps:
       - uses: actions/checkout@v3
+      - name: init test
+        env:
+          encodedString: ${{ secrets['MYAPP_' + $abc + '_STORE_FILE'] }}
+        run: echo $encodingString
       - name: Grant execute permission for gradlew
         run: chmod +x android/gradlew
 
@@ -30,7 +36,7 @@ jobs:
         with:
           fileName: "my-upload-key.keystore"
           fileDir: "/home/runner/work/react-native-github-actions/react-native-github-actions/android/app/keystore/"
-          encodedString: ${{ secrets.MYAPP_UPLOAD_STORE_FILE }}
+          encodedString: ${{ secrets['MYAPP_' + $abc + '_STORE_FILE'] }}
 
       # Build and sign APK
       - name: Build APK
