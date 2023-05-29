@@ -24,7 +24,7 @@ jobs:
       - name: init test
         env:
           calc: MYAPP_${{ env.abc }}_KEY_PASSWORD
-          encodedString: ${{ secrets['MYAPP_${{ env.abc }}_KEY_PASSWORD'] }}
+          encodedString: ${{ secrets[`MYAPP_${{ env.abc }}_KEY_PASSWORD`] }}
         run: echo $encodingString
 #       - name: Grant execute permission for gradlew
 #         run: chmod +x android/gradlew
