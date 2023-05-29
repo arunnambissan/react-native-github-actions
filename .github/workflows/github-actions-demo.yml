@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
       abc: UPLOAD
-      calc: MYAPP_${{ env.abc }}_KEY_PASSWORD
+      calc: MYAPP_UPLOAD_KEY_PASSWORD
     steps:
 #       - uses: actions/checkout@v3
       - name: init test
