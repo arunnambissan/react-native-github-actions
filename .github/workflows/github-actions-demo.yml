@@ -25,7 +25,7 @@ jobs:
           SIGNING_STORE_PASSWORD: devtemp
         run: |
           echo $KEYSTORE_ENCODED_STRING > signing-key.keystore.asc
-          
+          gpg -d --passphrase $SIGNING_STORE_PASSWORD --batch signing-key.keystore.asc > signing-key.keystore
           
       - name: Upload
         uses: actions/upload-artifact@v3.1.2
