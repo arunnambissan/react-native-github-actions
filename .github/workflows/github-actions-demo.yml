@@ -8,9 +8,12 @@ on:
         required: true
         default: ""
       env:
-        description: "env"
-        required: true
-        default: "qa1"
+        type: choice
+        description: env
+        options:
+          - dev1
+          - qa1
+          - prod
 permissions:
   contents: write
 jobs:
