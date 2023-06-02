@@ -28,12 +28,11 @@ jobs:
         
       - name: upload apk to app center
         run: |
-          appcenter distribute stores publish \
+          appcenter distribute stores publish --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8" \
           --file app/build/outputs/apk/release/app-release.apk \
           --store Beta \
           --app user/app \
           --release-notes "Some release note."
-          --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8"
         
         
       - name: Decode Keystore
