@@ -31,7 +31,7 @@ jobs:
           appcenter distribute stores publish \
           --file app/build/outputs/apk/release/app-release.apk \
           --store Beta \
-          --app Arun D/Test \
+          --app "Arun D"/Test \
           --release-notes "Some release note."
           --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8"
         
