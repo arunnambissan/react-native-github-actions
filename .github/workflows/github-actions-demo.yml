@@ -28,9 +28,10 @@ jobs:
         
       - name: upload apk to app center
         run: |
-          appcenter distribute stores publish --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8" \
+          appcenter distribute release --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8" \
           --file android/app/build/outputs/apk/release/app-release.apk \
-          --app user/app \
+          --app TestOrgArunD/TestApp \
+          --group Collaborators \
           --release-notes "Some release note."
         
         
