@@ -6,7 +6,7 @@ on:
       version:
         description: "release_version"
         required: true
-        default: ""
+        default: "1"
       env:
         type: choice
         description: env
@@ -29,7 +29,7 @@ jobs:
       - name: upload apk to app center
         run: |
           appcenter distribute stores publish --token "9f4002d47677bfe7d383cb38836a24b7a3ed87e8" \
-          --file app/build/outputs/apk/release/app-release.apk \
+          --file android/app/build/outputs/apk/release/app-release.apk \
           --store Beta \
           --app user/app \
           --release-notes "Some release note."
