@@ -21,7 +21,7 @@ jobs:
     name: Build Signed APK
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+#       - uses: actions/checkout@v3
       
       - name: test
         run: echo ${{ env.PACKAGE_NAME_B_DEV1 }} && echo ${{ env.PACKAGE_NAME_b_dev1 }}
