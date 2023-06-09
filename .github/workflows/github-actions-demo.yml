@@ -24,7 +24,9 @@ jobs:
 #       - uses: actions/checkout@v3
       
       - name: test
-        run: echo "${{ env.PACKAGE_NAME_B_DEV1 }}" && echo "${{ env.PACKAGE_NAME_b_dev1 }}"
+        run: echo "${{ env.PACKAGE_NAME_B_DEV1 }}" && echo "${{ env.PACKAGE_NAME_b_dev1 }}" && echo "${{ env.TT }}"
+        env:
+          TT: tt
 
       - name: install app center
         run: npm install --location=global appcenter-cli
