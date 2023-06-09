@@ -14,6 +14,10 @@ on:
           - dev1
           - qa1
           - prod
+      environment:
+        description: 'Environment to run tests against'
+        type: environment
+        required: true
 permissions:
   contents: write
 jobs:
