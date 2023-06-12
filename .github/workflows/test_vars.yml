@@ -17,7 +17,11 @@ jobs:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
         run: |
-          echo "direct access github secret" && echo $TEST_GITHUB_SECRET \
-          echo "direct access github variable" && echo $TEST_GITHUB_VARIABLE \
-          echo "access secret using yml env var" && echo $TEST_GITHUB_SECRET_VAL \
-          echo "\n access variable using yml env var" && echo $TEST_GITHUB_VARIABLE_VAL
+          echo "direct access github secret" \
+          echo $TEST_GITHUB_SECRET \
+          echo "direct access github variable" \
+          echo $TEST_GITHUB_VARIABLE \
+          echo "access secret using yml env var" \
+          echo $TEST_GITHUB_SECRET_VAL \
+          echo "access variable using yml env var" \
+          echo $TEST_GITHUB_VARIABLE_VAL
