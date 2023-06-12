@@ -29,7 +29,7 @@ jobs:
 #       - uses: actions/checkout@v3
       - name: test 1
         run: |
-          echo "repository variable : $DYNAMIC_VAR vars ${{ vars.DYNAMIC_VAR }}"
+          echo $DYNAMIC_VAR 
 
       - name: test
         run: echo "${{ github.event.inputs.environment }}" && echo "${{ vars.PACKAGE_NAME_B_DEV1 }}" && echo "${{ vars.PACKAGE_NAME_b_dev1 }}" && echo "${{ secrets.TEST }}" && echo "${{ vars.TEST_VAR }}"
