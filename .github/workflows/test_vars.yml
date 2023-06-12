@@ -12,8 +12,11 @@ jobs:
     name: GitHub Actions Test Vars
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        uses: actions/checkout@v3
+        
       - name: Test vars
         env:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
-        run: chmod +x ./scripts/test_script.sh && ./scripts/test_script.sh
+        run: chmod +x scripts/test_script.sh && scripts/test_script.sh
