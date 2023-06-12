@@ -28,7 +28,9 @@ jobs:
     steps:
 #       - uses: actions/checkout@v3
       - name: test 1
-        run: echo $TEST_VAR
+        run: |
+          echo "repository variable : $REPOSITORY_VAR"
+
       - name: test
         run: echo "${{ github.event.inputs.environment }}" && echo "${{ vars.PACKAGE_NAME_B_DEV1 }}" && echo "${{ vars.PACKAGE_NAME_b_dev1 }}" && echo "${{ secrets.TEST }}" && echo "${{ vars.TEST_VAR }}"
         env:
