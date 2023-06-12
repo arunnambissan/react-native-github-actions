@@ -1,0 +1,23 @@
+name: GitHub Actions Test Vars
+run-name: GitHub Actions Test Vars
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "release_version"
+        required: true
+        default: "1"
+jobs:
+  build:
+    name: GitHub Actions Test Vars
+    runs-on: ubuntu-latest
+    steps:
+      - name: Test vars
+        env:
+          TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
+          TEST_GITHUB_VARIABLE_VAL: ${{ secrets.TEST_GITHUB_VARIABLE }}
+        run: |
+          echo "direct access github secret" && echo $TEST_GITHUB_SECRET \
+          echo "direct access github variable" && echo $TEST_GITHUB_VARIABLE \
+          echo "access secret using yml env var" && echo $TEST_GITHUB_SECRET \
+          echo "access variable using yml env var" && echo $TEST_GITHUB_VARIABLE
