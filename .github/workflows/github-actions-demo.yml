@@ -43,9 +43,7 @@ jobs:
         run: |
           appcenter distribute release --token "978c8a13dd51f1d8e42f44959c989863407cdf95" \
           --file android/app/build/outputs/apk/release/app-release.apk \
-          --app TestOrgArunD/TestApp \
           --group Collaborators \
-          --release-notes "Some release note."
         
         
       - name: Decode Keystore
