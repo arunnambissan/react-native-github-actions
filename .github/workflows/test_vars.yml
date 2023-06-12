@@ -16,4 +16,4 @@ jobs:
         env:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
-        run: chmod +x test_script.sh && test_script.sh
+        run: chmod +x /test_script.sh && /test_script.sh
