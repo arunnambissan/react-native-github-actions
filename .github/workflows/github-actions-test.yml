@@ -30,7 +30,7 @@ jobs:
       - name: test 0
         run: echo ${{ env.T }}
         env:
-            TT: ${{ github.event.inputs.environment == "dev1" && 'ggg' || github.event.inputs.environment }}
+            TT: ${{ github.event.inputs.environment == 'dev1' && 'ggg' || github.event.inputs.environment }}
             
       - name: test 1
         run: |
