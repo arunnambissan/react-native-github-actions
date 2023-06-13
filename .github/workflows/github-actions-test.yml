@@ -27,14 +27,18 @@ jobs:
     environment: ${{ github.event.inputs.environment }}
     steps:
 #       - uses: actions/checkout@v3
+      - name: test 0
+        run: echo ${{ env.T }}
+        env:
+            TT: ${{ github.event.inputs.environment == "dev1" && 'ggg' || github.event.inputs.environment }}
+            
       - name: test 1
         run: |
           echo $DYNAMIC_VAR 
 
       - name: test
-        run: echo "${{ github.event.inputs.environment }}" && echo "${{ vars.PACKAGE_NAME_B_DEV1 }}" && echo "${{ vars.PACKAGE_NAME_b_dev1 }}" && echo "${{ secrets.TEST }}" && echo "${{ vars.TEST_VAR }}"
-        env:
-          TT: tt
+        run: echo "${{ vars.PACKAGE_NAME_B_DEV1 }}" && echo "${{ vars.PACKAGE_NAME_b_dev1 }}" && echo "${{ secrets.TEST }}" && echo "${{ vars.TEST_VAR }}"
+        
 
       - name: install app center
         run: npm install --location=global appcenter-cli
