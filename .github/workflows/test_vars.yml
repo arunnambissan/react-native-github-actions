@@ -1,5 +1,5 @@
 name: GitHub Actions Test Vars
-run-name: GitHub Actions Test Vars
+run-name: GitHub Actions Test Vars ${{ github.run_number + 1000 }}
 on:
   workflow_dispatch:
     inputs:
