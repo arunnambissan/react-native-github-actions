@@ -6,7 +6,7 @@ on:
 #       main
   workflow_dispatch:
     inputs:
-      version:
+      environment:
         description: "environment"
         type: environment
         default: dev1
