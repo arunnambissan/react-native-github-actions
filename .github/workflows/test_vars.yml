@@ -10,15 +10,30 @@ on:
         description: "release_version"
         required: true
         default: "1"
+        
 jobs:
   build:
     name: GitHub Actions Test Vars
     runs-on: ubuntu-latest
+    environment: ${{ github.event.inputs.environment }}
+    
+    env:
+      TEST_ENV_VAR: abc
+      
     steps:
       - name: checkout
         uses: actions/checkout@v3
         
-      - name: Test vars
+      - name: Print GitHub environment vars
+        run: echo "${{ vars.TEST_GITHUB_VARIABLE }}"
+      
+      - name: Print GitHub environment secrets
+        run: echo "${{ vars.TEST_GITHUB_SECRET }}"
+      
+      - name: Print
+        run: echo "${{ env.TEST_ENV_VAR }}"
+      
+      - name: Test accessing vars from other files
         env:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
