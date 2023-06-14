@@ -22,5 +22,4 @@ jobs:
           name: asc_file
           path: android/app/build/outputs/apk/release/app-release.apk
 
-      - name: Add summary
-        run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
