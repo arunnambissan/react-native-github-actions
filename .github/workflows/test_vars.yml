@@ -1,6 +1,9 @@
 name: GitHub Actions Test Vars
 run-name: GitHub Actions Test Vars ${{ github.run_number }}
 on:
+#   pull_request:
+#     branches:
+#       main
   workflow_dispatch:
     inputs:
       version:
@@ -20,12 +23,3 @@ jobs:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
         run: chmod +x scripts/test_script.sh && scripts/test_script.sh
-        
-      - name: keystore
-        run: echo "${{ secrets.KEYSTONE_ASC }}" > keystore-b64.txt
-        
-      - name: Upload
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: keystore-b64
-          path: keystore-b64.txt
