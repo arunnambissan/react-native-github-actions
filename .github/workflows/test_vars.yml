@@ -7,9 +7,10 @@ on:
   workflow_dispatch:
     inputs:
       version:
-        description: "release_version"
+        description: "environment"
+        type: environment
+        default: dev1
         required: true
-        default: "1"
         
 jobs:
   build:
