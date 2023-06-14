@@ -1,5 +1,5 @@
 name: GitHub Actions Test Vars
-run-name: GitHub Actions Test Vars ${{ github.run_number }}
+run-name: GitHub Actions Test Vars ${{ github.run_number }} - ${{ github.event.inputs.environment }}
 on:
 #   pull_request:
 #     branches:
