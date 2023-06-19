@@ -1,0 +1,21 @@
+name: Merge Complete
+
+on:
+  pull_request:
+    types:
+      - closed
+    branches:
+      - main
+
+jobs:
+  merge_complete:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run actions on merge complete
+        run: |
+          echo "Pull request merged!"
+          # Add your desired actions or commands here
