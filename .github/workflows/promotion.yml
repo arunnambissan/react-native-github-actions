@@ -17,7 +17,14 @@ jobs:
     environment: dev
       
     steps:
-      - name: checkout
-        uses: actions/checkout@v3
+      - name: test one
+        run: echo "job 1"
         
+  job_two:
+    name: Job Two
+    runs-on: ubuntu-latest
+    environment: prod
       
+    steps:
+      - name: test one
+        run: echo "job 2"
