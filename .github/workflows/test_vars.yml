@@ -16,7 +16,7 @@ jobs:
   build:
     name: GitHub Actions Test Vars
     runs-on: ubuntu-latest
-    environment: test_env
+    environment: ${{ github.event.inputs.environment }}
     
     env:
       TEST_ENV_VAR: abc
