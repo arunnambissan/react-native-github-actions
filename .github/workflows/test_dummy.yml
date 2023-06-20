@@ -1,7 +1,10 @@
 name: Upload staging config to S3
 run-name: Upload staging config to S3 ${{ github.run_number }}
 
-on: workflow_dispatch
+on: 
+  pull_request:
+    branches:
+      main
 
 jobs:
   build:
