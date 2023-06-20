@@ -6,7 +6,7 @@ on: workflow_dispatch
 jobs:
   build:
     name: Dummy workflow dispatch
-    runs-on: macos-lates
+    runs-on: macos-latest
 
     steps:
       - name: Checkout codebase
