@@ -1,5 +1,5 @@
 name: Add summary
-
+run-name: tttt
 on:
   workflow_dispatch:
     inputs:
@@ -14,14 +14,15 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout codebase
-        uses: actions/checkout@v3
+      - run: echo "asdasd" >> $GITHUB_WORKFLOW
+#       - name: Checkout codebase
+#         uses: actions/checkout@v3
         
-      - name: Upload
-        uses: actions/upload-artifact@v3.1.2
-        with:
-          name: asc_file
-          path: android/app/build/outputs/apk/release/app-release.apk
+#       - name: Upload
+#         uses: actions/upload-artifact@v3.1.2
+#         with:
+#           name: asc_file
+#           path: android/app/build/outputs/apk/release/app-release.apk
 
-      - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
-      - run: echo 300 >> $GITHUB_RUN_NUMBER
+#       - run: echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+#       - run: echo 300 >> $GITHUB_RUN_NUMBER
