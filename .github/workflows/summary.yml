@@ -14,7 +14,7 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - run: echo "asdasd" >> $GITHUB_WORKFLOW
+      - run: echo $GITHUB_WORKFLOW
 #       - name: Checkout codebase
 #         uses: actions/checkout@v3
         
