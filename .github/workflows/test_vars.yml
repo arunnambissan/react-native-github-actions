@@ -25,6 +25,9 @@ jobs:
       - name: checkout
         uses: actions/checkout@v3
         
+      - name: echo test
+        run: echo "${{ secrets.test_test_ }}" && echo "${{ vars.test_test_ }}" && echo "testt"
+        
       - name: Print GitHub environment vars
         run: echo "${{ vars.TEST_ENV_VAR }}"
       
