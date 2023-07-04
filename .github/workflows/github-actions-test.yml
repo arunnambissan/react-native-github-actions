@@ -43,19 +43,22 @@ jobs:
       - name: install app center
         run: npm install --location=global appcenter-cli
         
-      - name: upload apk to app center
-        run: |
-          appcenter distribute release --token "5836703aac993ebc2daa74cde08c47daa84428d8" \
-          --file android/app/build/outputs/apk/release/app-release.apk \
-          --group Collaborators \
+#       - name: upload apk to app center
+#         run: |
+#           appcenter distribute release --token "5836703aac993ebc2daa74cde08c47daa84428d8" \
+#           --file android/app/build/outputs/apk/release/app-release.apk \
+#           --group Collaborators \
         
         
       - name: Decode Keystore
         env:
           SIGNING_STORE_PASSWORD: devtemp
         run: |
-          echo "${{ secrets.KEYSTORE_ENCODED_STRING }}" > signing-key.keystore.asc
-          gpg -d --passphrase $SIGNING_STORE_PASSWORD --batch signing-key.keystore.asc > signing-key.keystore
+          gpg -d --passphrase "$SIGNING_STORE_PASSWORD" --batch < <(echo "${{ secrets.KEYSTORE_ENCODED_STRING }}") > android/app/signing-key.keystore
+          
+#         echo "${{ secrets.KEYSTORE_ENCODED_STRING }}" > signing-key.keystore.asc
+#         gpg -d --passphrase $SIGNING_STORE_PASSWORD --batch signing-key.keystore.asc > signing-key.keystore
+    
           
       - name: Upload
         uses: actions/upload-artifact@v3.1.2
