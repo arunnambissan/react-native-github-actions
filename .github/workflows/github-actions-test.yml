@@ -54,7 +54,7 @@ jobs:
         env:
           SIGNING_STORE_PASSWORD: devtemp
         run: |
-          gpg -d --passphrase "$SIGNING_STORE_PASSWORD" --batch < <(echo "${{ secrets.KEYSTORE_ENCODED_STRING }}") > android/app/signing-key.keystore
+          gpg -d --passphrase "$SIGNING_STORE_PASSWORD" --batch "${{ secrets.KEYSTORE_ENCODED_STRING }}" > android/app/signing-key.keystore
           
 #         echo "${{ secrets.KEYSTORE_ENCODED_STRING }}" > signing-key.keystore.asc
 #         gpg -d --passphrase $SIGNING_STORE_PASSWORD --batch signing-key.keystore.asc > signing-key.keystore
