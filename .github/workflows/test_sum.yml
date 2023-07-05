@@ -12,6 +12,10 @@ jobs:
   summary:
     name: Build #summary
     runs-on: macos-latest
+    strategy:
+      matrix:
+        platform: [android]
+        p_t: [a,b,c,d]
     
     env: 
       NEW_RUN_NAME: "new run name"
@@ -26,7 +30,7 @@ jobs:
           |Version|4.22.1|
           |Build Number|2211|                   
           |Banch|https://asfdasf/com|
-          |S3 Artifact URL| |
+          |S3 Artifact URL| ${{ matrix.p_t }}|
           " >> $GITHUB_STEP_SUMMARY
         
 #       - name: Get Workflow Run Details
