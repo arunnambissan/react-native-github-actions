@@ -47,4 +47,4 @@ jobs:
 #           name: asc_file
 #           path: android/app/build/outputs/apk/release/app-release.apk
 
-      - run: echo "### Branch used ${{ env.GITHUB_REF_NAME }}" >> $GITHUB_STEP_SUMMARY
+      - run: echo "### Branch used $GITHUB_REF_NAME" >> $GITHUB_STEP_SUMMARY
