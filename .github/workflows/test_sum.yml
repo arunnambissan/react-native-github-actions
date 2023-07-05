@@ -1,4 +1,4 @@
-name: Add summary
+name: Release sum
 run-name: tttt
 on:
   workflow_dispatch:
@@ -47,4 +47,5 @@ jobs:
 #           name: asc_file
 #           path: android/app/build/outputs/apk/release/app-release.apk
 
-      - run: echo "### Branch used $GITHUB_REF_NAME" >> $GITHUB_STEP_SUMMARY
+      - name: Generate sum 
+        run: echo "### Branch used $GITHUB_REF_NAME" >> $GITHUB_STEP_SUMMARY
