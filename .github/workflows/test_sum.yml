@@ -9,7 +9,8 @@ on:
         default: dev1
         required: true
 jobs:
-  build:
+  summary:
+    name: Build #summary
     runs-on: macos-latest
     
     env: 
