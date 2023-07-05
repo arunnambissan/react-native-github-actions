@@ -17,6 +17,11 @@ jobs:
       NEW_RUN_NAME: "new run name"
 
     steps:
+      - name: Generate sum 
+        run: echo "
+         |Tes|Yyy|
+         |a|b|" >> $GITHUB_STEP_SUMMARY
+        
 #       - name: Get Workflow Run Details
 #         id: workflow_run
 #         run: |
@@ -46,9 +51,3 @@ jobs:
 #         with:
 #           name: asc_file
 #           path: android/app/build/outputs/apk/release/app-release.apk
-
-      - name: Generate sum 
-        run: echo "
-         |Tes|Yyy|
-         |a|b|
-        " >> $GITHUB_STEP_SUMMARY
