@@ -19,8 +19,13 @@ jobs:
     steps:
       - name: Generate sum 
         run: echo "
-         |Tes|Yyy|
-         |a|b|" >> $GITHUB_STEP_SUMMARY
+          |||
+          |-|-|
+          |Env|dev1|            
+          |Version|4.22.1|
+          |Build Number|2211|                   
+          |Banch|https://asfdasf/com|
+          |S3 Artifact URL| |" >> $GITHUB_STEP_SUMMARY
         
 #       - name: Get Workflow Run Details
 #         id: workflow_run
