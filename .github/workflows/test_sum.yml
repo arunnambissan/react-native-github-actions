@@ -10,7 +10,6 @@ on:
         required: true
 jobs:
   build:
-    name: Gen sum
     runs-on: macos-latest
     
     env: 
