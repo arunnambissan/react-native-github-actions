@@ -48,4 +48,7 @@ jobs:
 #           path: android/app/build/outputs/apk/release/app-release.apk
 
       - name: Generate sum 
-        run: echo "### Branch used $GITHUB_REF_NAME" >> $GITHUB_STEP_SUMMARY
+        run: echo "
+         |Tes|Yyy|
+         |a|b|
+        " >> $GITHUB_STEP_SUMMARY
