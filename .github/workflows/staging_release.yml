@@ -1,0 +1,12 @@
+name: Upload staging config to S3
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    name: Dummy workflow dispatch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: init workflow_dispatch
+        run: echo "init workflow_dispatch to show `Run workflow` button in GitHub Actions UI"
