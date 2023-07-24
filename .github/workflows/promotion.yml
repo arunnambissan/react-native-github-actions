@@ -1,7 +1,12 @@
 name: GitHub Actions Test Promotion
 run-name: GitHub Actions Test Vars ${{ github.run_number }} - ${{ github.event.inputs.environment }}
 on:
-  workflow_dispatch
+  workflow_dispatch: 
+    inputs:
+      generateProd:
+        type: boolean
+        default: false
+        description: Generate prod build
         
 jobs:
   job_one:
