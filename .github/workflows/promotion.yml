@@ -1,37 +1,24 @@
-name: GitHub Actions Test Promotion
-run-name: GitHub Actions Test Vars ${{ github.run_number }} - ${{ github.event.inputs.environment }}
+name: Disc - Release Build & Generate Artifacts
+
 on:
-  workflow_dispatch: 
+  workflow_dispatch:
     inputs:
+      version:
+        description: "Enter the new version of the release. Eg: 4.4.0"
+        default: 4.4.0
+        required: true
       generateProd:
         type: boolean
         default: false
-        description: Generate prod build
-        
+        description: Generate PROD build
+
+run-name: "WD Discovery - Release Build & Generate Artifacts qa1 ${{ inputs.generateProd && '& prod' || '' }} #${{ github.run_number }}"
+
 jobs:
-  job_one:
-    name: Job One
+  build:
+    name: Build and generate artifacts
     runs-on: ubuntu-latest
-    environment: dev
-      
+
     steps:
-      - name: test one
-        run: echo "job 1"
-        
-  job_two:
-    name: Job Two
-    runs-on: ubuntu-latest
-    environment: prod
-    needs: job_one
-      
-    steps:
-      - name: test one
-        run: echo "job 2"
-        
-      - name: Configure QA AWS credentials
-        uses: aws-actions/configure-aws-credentials@v2
-        env:
-          AWS_ACCOUNT_ID: 121212
-        with:
-          role-to-assume: arn:aws:iam::${{ env.AWS_ACCOUNT_ID }}:role/staging-GitHubActionsRole
-          aws-region: us-west-2
+      - name: init workflow_dispatch
+        run: echo "init workflow_dispatch to show `Run workflow` button in GitHub Actions UI"
