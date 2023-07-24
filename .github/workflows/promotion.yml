@@ -1,4 +1,4 @@
-name: Disc - Release Build & Generate Artifacts
+name: WD Discovery - Release Build & Generate Artifacts
 
 on:
   workflow_dispatch:
@@ -12,7 +12,7 @@ on:
         default: false
         description: Generate PROD build
 
-run-name: "WD Discovery - Release Build & Generate Artifacts qa1 ${{ inputs.generateProd && '& prod' || '' }} #${{ github.run_number }}"
+run-name: "WD Discovery - Release Build & Generate Artifacts ${{ inputs.generateProd && '(qa1 & prod)' || '(qa1)' }} #${{ github.run_number }}"
 
 jobs:
   build:
