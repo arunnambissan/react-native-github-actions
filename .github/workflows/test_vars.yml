@@ -37,6 +37,11 @@ jobs:
       - name: Print
         run: echo "${{ env.TEST_ENV_VAR }}"
 
+      - name: Test if
+        env:
+          TEST_CONDITIONAL_VAL: ${{ (inputs.environment == 'prod' && 'release') || (inputs.environment == 'test_env' && 'env2') || (inputs.environment == 'dev1' && 'dev1') }}
+        run: echo $TEST_CONDITIONAL_VAL
+
       - run: fail abc
       
       - name: Test accessing vars from other files
