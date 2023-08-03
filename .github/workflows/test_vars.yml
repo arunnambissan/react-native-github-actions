@@ -36,9 +36,15 @@ jobs:
       
       - name: Print
         run: echo "${{ env.TEST_ENV_VAR }}"
+
+      - run: fail abc
       
       - name: Test accessing vars from other files
         env:
           TEST_GITHUB_SECRET_VAL: ${{ secrets.TEST_GITHUB_SECRET }}
           TEST_GITHUB_VARIABLE_VAL: ${{ vars.TEST_GITHUB_VARIABLE }}
         run: chmod +x scripts/test_script.sh && scripts/test_script.sh
+
+      - name: test always
+        if: failure()
+        run: echo "done"
