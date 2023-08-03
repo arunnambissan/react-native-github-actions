@@ -20,6 +20,10 @@ jobs:
     
     env:
       TEST_ENV_VAR: abc
+      TEST_CONDITIONAL_VAL: ${{ 
+        (inputs.environment == 'prod' && 'release') || 
+        (inputs.environment == 'test_env' && 'env2') || 
+        (inputs.environment == 'dev1' && 'dev1') }}
       
     steps:
       - name: checkout
@@ -37,9 +41,7 @@ jobs:
       - name: Print
         run: echo "${{ env.TEST_ENV_VAR }}"
 
-      - name: Test if
-        env:
-          TEST_CONDITIONAL_VAL: ${{ (inputs.environment == 'prod' && 'release') || (inputs.environment == 'test_env' && 'env2') || (inputs.environment == 'dev1' && 'dev1') }}
+      - name: Test conditional val
         run: echo $TEST_CONDITIONAL_VAL
 
       - run: fail abc
