@@ -23,7 +23,7 @@ jobs:
         platform: [android, ios]
       
         include:
-          environment: {{ inputs.environments == 'dev1' && 'dev1' }} 
+          environment: ${{ inputs.environments }} 
 
     environment: ${{ matrix.environment }}
     
