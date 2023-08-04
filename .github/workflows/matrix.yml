@@ -17,9 +17,9 @@ jobs:
     strategy:
       matrix:
         environment: 
-          - dev1
-          - staging
-          - prod
+          - ${{ inputs.environments == 'dev1' && 'dev1' }}
+          - ${{ inputs.environments == 'staging & prod' && 'staging' }}
+          - ${{ inputs.environments == 'staging & prod' && 'prod' }}
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
