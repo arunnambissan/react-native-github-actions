@@ -21,8 +21,10 @@ jobs:
           - staging
           - prod
         platform: [android, ios]
+      
+        include:
+          environment: {{ inputs.environments == 'dev1' && 'dev1' }} 
 
-    if: inputs.environments == 'dev1' && matrix.environment == 'dev1'
     environment: ${{ matrix.environment }}
     
     steps:
