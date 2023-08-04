@@ -16,7 +16,10 @@ jobs:
 
     strategy:
       matrix:
-        environment: [dev1, staging, prod]
+        environment: 
+          - dev1
+          - staging
+          - prod
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
