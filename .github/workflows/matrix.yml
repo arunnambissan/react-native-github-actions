@@ -1,0 +1,26 @@
+name: 
+on:
+  workflow_dispatch:
+    inputs:
+      environments:
+        type: choice
+        description: Make a choice
+        options:
+        - dev1
+        - staging & prod
+        
+jobs:
+  build:
+    name: GitHub Actions Test Vars
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        environment: [${{ true && 'dev1' }}]
+        platform: [android, ios]
+
+    environment: ${{ matrix.environment }}
+    
+    steps:
+      - name: Test
+        run: echo "test"
