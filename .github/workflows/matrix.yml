@@ -16,10 +16,11 @@ jobs:
 
     strategy:
       matrix:
-        environment: [${{ true && 'dev1' }}]
+        environment: [dev1, staging, prod]
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
+    if: inputs.environments == 'dev1'
     
     steps:
       - name: Test
