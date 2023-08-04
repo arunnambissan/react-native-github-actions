@@ -19,7 +19,7 @@ jobs:
 
     strategy:
       matrix:
-        environment: ${{ fromJSON(env.envs) }}
+        environment: ${{ fromJSON("['dev1','staging']") }}
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
