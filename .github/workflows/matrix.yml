@@ -1,4 +1,4 @@
-name: 
+name: matrix
 on:
   workflow_dispatch:
     inputs:
@@ -16,14 +16,8 @@ jobs:
 
     strategy:
       matrix:
-        environment:
-          - dev1
-          - staging
-          - prod
+        environment: [inputs.environments]
         platform: [android, ios]
-      
-        include:
-          environment: ${{ inputs.environments }} 
 
     environment: ${{ matrix.environment }}
     
