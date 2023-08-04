@@ -1,7 +1,21 @@
 name: Upload staging config to S3
 run-name: Upload staging config to S3 ${{ github.run_number }}
 
-on: workflow_dispatch
+on: 
+  workflow_dispatch:
+    inputs:
+      generateQA1:
+        type: boolean
+        default: false
+        description: Generate QA1 build
+      generatePROD:
+        type: boolean
+        default: false
+        description: Generate PROD build
+      uploadToAWS:
+        type: boolean
+        default: false
+        description: Upload non-dev artifacts to S3
 
 jobs:
   build:
@@ -11,4 +25,8 @@ jobs:
     steps:
       - name: Checkout codebase
         run: echo "Dummy workflow_dispatch"
+
+      - name: Test print
+        if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
+        run: echo "init"
         
