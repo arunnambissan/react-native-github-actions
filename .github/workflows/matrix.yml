@@ -8,6 +8,10 @@ on:
         options:
         - dev1
         - staging & prod
+      envs:
+        description: provide all OS in stringified array format
+        required: true
+        default: "['dev1','staging']"
         
 jobs:
   build:
@@ -16,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        environment: ${{ fromJSON('[dev1, staging]') }}
+        environment: ${{ fromJSON(github.event.inputs.envs) }}
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
