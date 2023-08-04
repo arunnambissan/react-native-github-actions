@@ -8,19 +8,18 @@ on:
         options:
         - dev1
         - staging & prod
-      envs:
-        description: provide all OS in stringified array format
-        required: true
-        default: "['dev1','staging']"
         
 jobs:
   build:
     name: GitHub Actions Test Vars
     runs-on: ubuntu-latest
 
+    env:
+      envs: "['dev1','staging']"
+
     strategy:
       matrix:
-        environment: ${{ fromJSON(inputs.envs) }}
+        environment: ${{ fromJSON(env.envs) }}
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
