@@ -20,7 +20,7 @@ jobs:
 
     strategy:
       matrix:
-        environment: ${{ fromJSON(github.event.inputs.envs) }}
+        environment: ${{ fromJSON(inputs.envs) }}
         platform: [android, ios]
 
     environment: ${{ matrix.environment }}
