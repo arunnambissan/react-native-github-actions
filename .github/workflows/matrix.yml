@@ -22,7 +22,7 @@ jobs:
           - prod
         platform: [android, ios]
 
-    if: (inputs.environments == 'dev1' && matrix.environment == dev1) || (inputs.environments == 'staging & prod' && (matrix.environment == 'staging' || matrix.environment == 'prod'))
+    if: inputs.environments == 'dev1' && matrix.environment == 'dev1'
     environment: ${{ matrix.environment }}
     
     steps:
