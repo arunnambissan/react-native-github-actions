@@ -1,4 +1,4 @@
-name: Upload staging config to S3
+name: inputs.uploadToAWS
 run-name: Upload staging config to S3 ${{ github.run_number }}
 
 on: 
