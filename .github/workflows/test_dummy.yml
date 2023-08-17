@@ -28,12 +28,14 @@ jobs:
 
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
-
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v3.1.2
         with:
-          name: msbuild
-          path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\
+          msbuild-version: '14.0
+
+      # - name: Upload Artifacts
+      #   uses: actions/upload-artifact@v3.1.2
+      #   with:
+      #     name: msbuild
+      #     path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\
         
           
       
