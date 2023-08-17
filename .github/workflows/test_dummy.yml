@@ -72,7 +72,7 @@ jobs:
       - name: List tree 2
         run: |
           $path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
-          ls $path
+          TREE $path /F
       
       # - name: List tree 3
       #   run: |
