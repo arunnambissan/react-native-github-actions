@@ -26,9 +26,7 @@ jobs:
       # - name: Checkout codebase
       #   uses: actions/checkout@v3
 
-      - name: Add msbuild to PATH
-        run: |
-          npm install --global --production windows-build-tools
+      
           
 
       # - name: Upload Artifacts
@@ -37,12 +35,7 @@ jobs:
       #     name: msbuild
       #     path: C:\Program Files\Microsoft Visual Studio\2022\Enterprise\
         
-          
-      
-      - name: List files
-        run: |
-          $path = "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140"
-          Get-ChildItem -Path $path
+     
         
       # - run: |
       #     ls C:/Program Files/Microsoft Visual Studio/2022/Enterprise
@@ -52,6 +45,14 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 10.15.3
+
+      - name: Add msbuild to PATH
+        run: npm install --global --production windows-build-tools 
+      
+      - name: List files
+        run: |
+          $path = "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140"
+          Get-ChildItem -Path $path
 
       - name: run VCTargetsPath
         run: |
