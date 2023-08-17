@@ -31,7 +31,7 @@ jobs:
 
       - name: List files
         run: |
-          $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\"
+          $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft"
           Get-ChildItem -Path $path
         
       # - run: |
