@@ -38,8 +38,8 @@ jobs:
         with:
           node-version: 10.15.3
 
-      - name: run $env:VCTargetsPath
-      - run: |
+      - name: run VCTargetsPath
+        run: |
           echo $env:VCTargetsPath
           echo $env:Path
       
