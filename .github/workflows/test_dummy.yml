@@ -29,7 +29,7 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
-      - run: ls C:\Program Files (x86)\MSBuild\Microsoft.Cpp
+      - run: ls C:\Program Files\MSBuild\Microsoft.Cpp
       
       - name: Install Node JS v10.15.3
         uses: actions/setup-node@v3
