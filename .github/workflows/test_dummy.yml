@@ -25,13 +25,15 @@ jobs:
     steps:
       # - name: Checkout codebase
       #   uses: actions/checkout@v3
-      - run: echo $env:Path
+      
       
       - name: Install Node JS v10.15.3
         uses: actions/setup-node@v3
         with:
           node-version: 10.15.3
-          
+
+      - run: echo $env:Path
+      
       - name: echo $env:APPDATA
         run: |
           echo $env:APPDATA
