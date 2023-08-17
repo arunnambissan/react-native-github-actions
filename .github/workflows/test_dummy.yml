@@ -29,7 +29,7 @@ jobs:
       - name: Test print
         # if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
         run: |
-          echo "init" >> WD-123.txt
+          echo "init" > WD-123.txt
           run: echo "init" > WD-123a.txt
 
       - name: Print artifacts S3 URLs
