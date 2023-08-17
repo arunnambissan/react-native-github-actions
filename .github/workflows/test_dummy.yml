@@ -59,7 +59,8 @@ jobs:
       - name: Add msbuild to PATH
         shell: powershell
         run: |
-          choco install visualstudio2017buildtools -y
+          choco install -y visualstudio2019buildtools visualstudio2019-workload-vctools
+        # choco install visualstudio2017buildtools -y
         # choco install visualcpp-build-tools
         # npm install --global windows-build-tools@4.0.0
         # npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\msbuild.exe"
