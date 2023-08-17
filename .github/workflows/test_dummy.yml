@@ -54,7 +54,7 @@ jobs:
       - name: Add msbuild to PATH
         shell: powershell
         run: |
-          npm install --global windows-build-tools@4.0.0
+          npm install --global windows-build-tools@4.0.0 --vs2017
           npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\msbuild.exe"
       
       - name: List files
