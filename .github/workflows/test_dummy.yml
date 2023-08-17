@@ -72,7 +72,12 @@ jobs:
       - name: List tree 3
         run: |
           $path = "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
-          ls $path
+          TREE $path /F
+      
+      - name: List tree 4
+        run: |
+          $path = "C:\Program Files\Microsoft Visual Studio\"
+          TREE $path /F
           
       
       - name: List files
