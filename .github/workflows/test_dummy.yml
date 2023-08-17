@@ -32,6 +32,7 @@ jobs:
           
       - name: echo $env:APPDATA
         run: |
+          echo $env:APPDATA
           ls $env:APPDATA
 
       - name: Test print
