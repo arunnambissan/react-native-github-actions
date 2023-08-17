@@ -34,7 +34,7 @@ jobs:
         run: |
           $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\"
           cd $path
-          tree
+          tree $path
           
       
       - name: List files
