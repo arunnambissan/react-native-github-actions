@@ -29,6 +29,15 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
+      - name: tree
+        shell: bash
+        run: |
+          sudo apt-get install tree
+          $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\"
+          cd $path
+          tree
+          
+      
       - name: List files
         run: |
           $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\Microsoft"
