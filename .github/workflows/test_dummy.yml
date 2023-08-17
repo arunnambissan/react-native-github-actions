@@ -68,6 +68,11 @@ jobs:
           $path = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
           cd $path
           vswhere -nologo -latest -property installationPath
+      
+      - name: List tree 3
+        run: |
+          $path = "C:\Program Files (x86)\Microsoft Visual Studio 14.0"
+          ls $path
           
       
       - name: List files
