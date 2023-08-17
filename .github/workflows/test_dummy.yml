@@ -46,13 +46,15 @@ jobs:
         with:
           node-version: 10.15.3
 
-      - name: Setup Python (Win)
-        run: |
-          choco install python2
-          npm config set python c:\Python27\python.exe
+      # - name: Setup Python (Win)
+      #   run: |
+      #     choco install python2
+      #     npm config set python c:\Python27\python.exe
 
       - name: Add msbuild to PATH
-        run: npm install --global --production windows-build-tools 
+        run: |
+          npm install --global --production windows-build-tools --vs2017
+          npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\msbuild.exe"
       
       - name: List files
         run: |
