@@ -24,13 +24,11 @@ jobs:
 
     steps:
       - name: Checkout codebase
-        run: echo "Dummy workflow_dispatch"
+        run: actions/checkout@v3
 
       - name: Test print
-        # if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
-        run: |
-          echo "init" > WD-123.txt
-          run: echo "init" > WD-123a.txt
+        if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
+        run: echo "test if"
 
       - name: Print artifacts S3 URLs
         env:
