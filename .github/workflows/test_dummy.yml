@@ -64,7 +64,17 @@ jobs:
 
       - name: List files 2
         run: |
-          $path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\"
+          $path = "C:\Program Files (x86)\MSBuild"
+          Get-ChildItem -Path $path
+
+      - name: List files 3
+        run: |
+          $path = "C:\Program Files (x86)\Microsoft Visual Studio\"
+          Get-ChildItem -Path $path
+
+      - name: List files 4
+        run: |
+          $path = "C:\Program Files (x86)\"
           Get-ChildItem -Path $path
 
       - name: run VCTargetsPath
