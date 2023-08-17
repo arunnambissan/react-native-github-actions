@@ -36,6 +36,7 @@ jobs:
       - name: Print artifacts S3 URLs
         env:
           ARTIFACT_S3_URL: https://s3.us-jj.com
+        shell: bash
         run: |
           while IFS= read -r file; do
             filename=$(basename "$file")
