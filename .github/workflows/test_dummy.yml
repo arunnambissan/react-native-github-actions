@@ -40,8 +40,8 @@ jobs:
 
       - name: run $env:VCTargetsPath
       - run: |
-        echo $env:VCTargetsPath
-        echo $env:Path
+          echo $env:VCTargetsPath
+          echo $env:Path
       
       - name: echo $env:APPDATA
         run: |
