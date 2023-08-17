@@ -52,9 +52,14 @@ jobs:
       #     npm config set python c:\Python27\python.exe
 
       - name: Add msbuild to PATH
-        shell: powershell
-        run: |
-          choco install visualcpp-build-tools
+        uses: microsoft/setup-msbuild@v1.1
+        with:
+          vs-version: [13.0,14.0)
+
+      # - name: Add msbuild to PATH
+      #   shell: powershell
+      #   run: |
+      #     choco install visualcpp-build-tools
         # npm install --global windows-build-tools@4.0.0
         # npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\msbuild.exe"
 
