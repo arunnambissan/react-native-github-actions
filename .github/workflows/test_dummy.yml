@@ -27,7 +27,7 @@ jobs:
         run: echo "Dummy workflow_dispatch"
 
       - name: Test print
-        if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
+        # if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
         run: |
           echo "init" >> WD-123.txt
           run: echo "init" >> WD-123a.txt
