@@ -29,16 +29,18 @@ jobs:
       - name: Add msbuild to PATH
         uses: microsoft/setup-msbuild@v1.1
 
-      - run: |
-          ls C:/Program Files/Microsoft Visual Studio/2022/Enterprise
-        shell: bash
+      # - run: |
+      #     ls C:/Program Files/Microsoft Visual Studio/2022/Enterprise
+      #   shell: bash
       
       - name: Install Node JS v10.15.3
         uses: actions/setup-node@v3
         with:
           node-version: 10.15.3
 
-      - run: echo $env:Path
+      - run: |
+        echo $env:VCTargetsPath
+        echo $env:Path
       
       - name: echo $env:APPDATA
         run: |
