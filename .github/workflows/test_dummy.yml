@@ -59,7 +59,7 @@ jobs:
       - name: Add msbuild to PATH
         shell: powershell
         run: |
-          choco install -y visualstudio2019buildtools visualstudio2019-workload-vctools
+          choco install -y visualstudio2017buildtools visualstudio2017-workload-vctools
         # choco install visualstudio2017buildtools -y
         # choco install visualcpp-build-tools
         # npm install --global windows-build-tools@4.0.0
