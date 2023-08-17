@@ -64,8 +64,10 @@ jobs:
 
       - name: List tree 2
         run: |
-          $path = "C:\Program Files (x86)\Microsoft Visual Studio\"
-          TREE $path /F
+          $path = "C:\Program Files (x86)\Microsoft Visual Studio\Installer\"
+          cd $path
+          vswhere -nologo -latest -property installationPath
+          
       
       - name: List files
         run: |
