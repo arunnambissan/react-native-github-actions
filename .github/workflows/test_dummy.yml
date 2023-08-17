@@ -25,7 +25,11 @@ jobs:
     steps:
       # - name: Checkout codebase
       #   uses: actions/checkout@v3
-      
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v1.1
+
+      - run: ls C:\Program Files (x86)\MSBuild\Microsoft.Cpp
       
       - name: Install Node JS v10.15.3
         uses: actions/setup-node@v3
