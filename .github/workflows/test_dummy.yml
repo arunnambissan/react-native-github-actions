@@ -32,8 +32,6 @@ jobs:
       - name: tree
         shell: bash
         run: |
-          # GO111MODULE=on go get -u "github.com/thatisuday/tree"
-          # sudo apt-get install tree
           $path = "C:\Program Files\Microsoft Visual Studio\2022\Enterprise\MSBuild\"
           cd $path
           tree
