@@ -64,7 +64,7 @@ jobs:
 
       - name: List files 2
         run: |
-          $path = "C:\Program Files (x86)\MSBuild"
+          $path = "C:\Program Files (x86)\MSBuild\15.0\Bin\"
           Get-ChildItem -Path $path
 
       - name: List files 3
