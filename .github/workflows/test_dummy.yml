@@ -23,8 +23,8 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      # - name: Checkout codebase
-      #   uses: actions/checkout@v3
+      - name: Checkout codebase
+        uses: actions/checkout@v3
 
       
           
@@ -41,44 +41,44 @@ jobs:
       #     ls C:/Program Files/Microsoft Visual Studio/2022/Enterprise
       #   shell: bash
       
-      - name: Install Node JS v10.15.3
-        uses: actions/setup-node@v3
-        with:
-          node-version: 10.15.3
+      # - name: Install Node JS v10.15.3
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: 10.15.3
 
-      - name: Setup Python (Win)
-        run: |
-          choco install python2
-          npm config set python c:\Python27\python.exe
+      # - name: Setup Python (Win)
+      #   run: |
+      #     choco install python2
+      #     npm config set python c:\Python27\python.exe
 
       # - name: Add msbuild to PATH
       #   uses: microsoft/setup-msbuild@v1.1
         # with:
         #   vs-version: '[13.0,14.0)'
 
-      - name: Add msbuild to PATH
-        shell: powershell
-        run: |
-          choco install -y visualstudio2017buildtools visualstudio2017-workload-vctools
+      # - name: Add msbuild to PATH
+      #   shell: powershell
+      #   run: |
+      #     choco install -y visualstudio2017buildtools visualstudio2017-workload-vctools
         # choco install visualstudio2017buildtools -y
         # choco install visualcpp-build-tools
         # npm install --global windows-build-tools@4.0.0
         # npm config set msbuild_path "C:\Program Files (x86)\Microsoft Visual Studio\2017\BuildTools\MSBuild\15.0\Bin\msbuild.exe"
 
-      - name: List tree
-        run: |
-          $path = "C:\Program Files (x86)\MSBuild\"
-          TREE $path /F
+      # - name: List tree
+      #   run: |
+      #     $path = "C:\Program Files (x86)\MSBuild\"
+      #     TREE $path /F
 
-      - name: List tree
-        run: |
-          $path = "C:\Program Files\MSBuild\"
-          TREE $path /F
+      # - name: List tree
+      #   run: |
+      #     $path = "C:\Program Files\MSBuild\"
+      #     TREE $path /F
 
-      - name: List tree 2
-        run: |
-          $path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
-          TREE $path /F
+      # - name: List tree 2
+      #   run: |
+      #     $path = "C:\Program Files (x86)\Microsoft Visual Studio\2017\"
+      #     TREE $path /F
       
       # - name: List tree 3
       #   run: |
@@ -91,39 +91,39 @@ jobs:
       #     TREE $path /F
           
       
-      - name: List files
-        run: |
-          $path = "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140"
-          Get-ChildItem -Path $path
+      # - name: List files
+      #   run: |
+      #     $path = "C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\V140"
+      #     Get-ChildItem -Path $path
 
-      - name: List files 2
-        run: |
-          $path = "C:\Program Files (x86)\MSBuild\15.0\.Net"
-          Get-ChildItem -Path $path
+      # - name: List files 2
+      #   run: |
+      #     $path = "C:\Program Files (x86)\MSBuild\15.0\.Net"
+      #     Get-ChildItem -Path $path
 
-      - name: List files 3
-        run: |
-          $path = "C:\Program Files (x86)\Microsoft Visual Studio\"
-          Get-ChildItem -Path $path
+      # - name: List files 3
+      #   run: |
+      #     $path = "C:\Program Files (x86)\Microsoft Visual Studio\"
+      #     Get-ChildItem -Path $path
 
-      - name: List files 4
-        run: |
-          $path = "C:\Program Files (x86)\"
-          Get-ChildItem -Path $path
+      # - name: List files 4
+      #   run: |
+      #     $path = "C:\Program Files (x86)\"
+      #     Get-ChildItem -Path $path
 
-      - name: run VCTargetsPath
-        run: |
-          echo $env:VCTargetsPath
-          echo $env:Path
+      # - name: run VCTargetsPath
+      #   run: |
+      #     echo $env:VCTargetsPath
+      #     echo $env:Path
       
-      - name: echo $env:APPDATA
-        run: |
-          echo $env:APPDATA
-          ls $env:APPDATA
+      # - name: echo $env:APPDATA
+      #   run: |
+      #     echo $env:APPDATA
+      #     ls $env:APPDATA
 
-      - name: Test print
-        if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
-        run: echo "test if"
+      # - name: Test print
+      #   if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
+      #   run: echo "test if"
 
       - name: Print artifacts S3 URLs
         env:
@@ -133,5 +133,5 @@ jobs:
           while IFS= read -r file; do
             filename=$(basename "$file")
             echo "${{ env.ARTIFACT_S3_URL }}$filename"
-          done < <(find . -type f \( -name "WD-*" ! -name "WD-*-dev1-*" \))
+          done < <(find . -type f)
         
