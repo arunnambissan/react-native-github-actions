@@ -23,6 +23,9 @@ jobs:
     runs-on: windows-latest
 
     steps:
+
+      - run: ::exit::
+      
       - name: Checkout codebase
         uses: actions/checkout@v3
 
