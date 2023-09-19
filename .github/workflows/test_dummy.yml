@@ -24,7 +24,7 @@ jobs:
 
     steps:
 
-      # - run: ::exit::
+      - run: echo ${{ runner.os }}
       
       - name: Checkout codebase
         uses: actions/checkout@v3
