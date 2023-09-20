@@ -30,7 +30,8 @@ jobs:
         uses: actions/checkout@v3
 
       
-          
+      - name: Test composite
+        uses: ./.github/actions/composite-action
 
       # - name: Upload Artifacts
       #   uses: actions/upload-artifact@v3.1.2
