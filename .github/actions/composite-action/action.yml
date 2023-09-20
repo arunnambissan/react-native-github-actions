@@ -1,0 +1,9 @@
+name: test-composite
+description: Test composite
+
+runs:
+  using: "composite"
+  steps:
+    - name: tes step composite
+      run: echo "echo from composite step"
+      
