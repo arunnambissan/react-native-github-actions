@@ -33,8 +33,24 @@ jobs:
       - name: Test composite
         uses: ./.github/actions/composite-action
 
+      
+      
       - name: Generate summary
         run: |
+          $ANDROID_SUMMARY="
+          |Android|
+          |ibi|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/ibi/android/${{ inputs.version }}/$BUILD_NUMBER/|
+          |mch|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/mch/android/${{ inputs.version }}/$BUILD_NUMBER/|
+          |gza|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza/android/${{ inputs.version }}/$BUILD_NUMBER/|
+          |gza_jp|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza_jp/android/${{ inputs.version }}/$BUILD_NUMBER/|"
+          
+          $IOS_SUMMARY="
+          |iOS|
+          |ibi|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/ibi/ios/${{ inputs.version }}/$BUILD_NUMBER/|
+          |mch|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/mch/ios/${{ inputs.version }}/$BUILD_NUMBER/|
+          |gza|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza/ios/${{ inputs.version }}/$BUILD_NUMBER/|
+          |gza_jp|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza_jp/ios/${{ inputs.version }}/$BUILD_NUMBER/|"
+
           echo "
           |||
           |-|-|
@@ -43,16 +59,20 @@ jobs:
           |Build Number|$BUILD_NUMBER|                   
           |||
           |S3 Path||
-          |Android|
-          |ibi|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/ibi/android/${{ inputs.version }}/$BUILD_NUMBER/|
-          |mch|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/mch/android/${{ inputs.version }}/$BUILD_NUMBER/|
-          |gza|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza/android/${{ inputs.version }}/$BUILD_NUMBER/|
-          |gza_jp|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza_jp/android/${{ inputs.version }}/$BUILD_NUMBER/|
-          |iOS|
-          |ibi|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/ibi/ios/${{ inputs.version }}/$BUILD_NUMBER/|
-          |mch|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/mch/ios/${{ inputs.version }}/$BUILD_NUMBER/|
-          |gza|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza/ios/${{ inputs.version }}/$BUILD_NUMBER/|
-          |gza_jp|s3://${{ inputs.env_name }}-mobile-builds/k-mobile-apps/gza_jp/ios/${{ inputs.version }}/$BUILD_NUMBER/|
+          $ANDROID_SUMMARY
+          $IOS_SUMMARY
+          "
+          
+          echo "
+          |||
+          |-|-|
+          |Env|${{ inputs.env_name }}|            
+          |Version|${{ inputs.version }}|
+          |Build Number|$BUILD_NUMBER|                   
+          |||
+          |S3 Path||
+          $ANDROID_SUMMARY
+          $IOS_SUMMARY
           " >> $GITHUB_STEP_SUMMARY
       
       # - name: Generate summary 2
