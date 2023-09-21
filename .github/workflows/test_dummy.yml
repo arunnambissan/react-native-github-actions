@@ -33,6 +33,14 @@ jobs:
       - name: Test composite
         uses: ./.github/actions/composite-action
 
+      - name: Generate summary 
+        run: |
+          echo "abc" >> $GITHUB_STEP_SUMMARY
+      
+      - name: Generate summary 2
+        run: |
+          echo "22222abc" >> $GITHUB_STEP_SUMMARY
+
       # - name: Upload Artifacts
       #   uses: actions/upload-artifact@v3.1.2
       #   with:
@@ -129,13 +137,13 @@ jobs:
       #   if: inputs.uploadToAWS == true && (inputs.generateQA1 == true || inputs.generatePROD == true)
       #   run: echo "test if"
 
-      - name: Print artifacts S3 URLs
-        env:
-          ARTIFACT_S3_URL: https://s3.us-jj.com
-        shell: bash
-        run: |
-          while IFS= read -r file; do
-            filename=$(basename "$file")
-            echo "${{ env.ARTIFACT_S3_URL }}$filename"
-          done < <(find . -type f)
+      # - name: Print artifacts S3 URLs
+      #   env:
+      #     ARTIFACT_S3_URL: https://s3.us-jj.com
+      #   shell: bash
+      #   run: |
+      #     while IFS= read -r file; do
+      #       filename=$(basename "$file")
+      #       echo "${{ env.ARTIFACT_S3_URL }}$filename"
+      #     done < <(find . -type f)
         
