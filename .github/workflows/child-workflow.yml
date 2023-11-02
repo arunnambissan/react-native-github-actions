@@ -1,0 +1,15 @@
+name: Child workflow
+on:
+  workflow_call
+
+jobs:
+  android-release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output build information
+        run: |
+          echo "test"
+
+      - name: Output build information 2
+        run: |
+          echo "test 2"
