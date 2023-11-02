@@ -11,6 +11,9 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout codebase (${{ github.ref_name }})
+        uses: actions/checkout@v3
+        
       - name: Output build information 001
         run: |
           echo "test abcd"
