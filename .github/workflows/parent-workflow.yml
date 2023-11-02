@@ -23,7 +23,7 @@ jobs:
           echo "test abcd"
 
       - name: Download Paragon driver from Paragon website
-        run: wget "https://dl.paragon-software.com/APC/WD/NTFS4Mac/15.10.592/NTFS-15.10.592.dmg" paragon-driver
+        run: wget "https://dl.paragon-software.com/APC/WD/NTFS4Mac/15.10.592/NTFS-15.10.592.dmg" -P paragon-driver
       
       - name: Zip the downloaded file
         working-directory: paragon-driver
