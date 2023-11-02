@@ -18,12 +18,25 @@ jobs:
         run: |
           echo "test abcd"
 
-      - name: reuse
-        uses: ./.github/workflows/child-workflow.yml
+      - name: Download Paragon driver from Paragon website
+        run: wget "https://dl.paragon-software.com/APC/WD/NTFS4Mac/15.10.592/NTFS-15.10.592.dmg" paragon-driver
+      
+      - name: Zip the downloaded file
+        working-directory: paragon-driver
+        run: zip "NTFS-15.10.592" ./*
+        
+      # - name: reuse
+      #   uses: ./.github/workflows/child-workflow.yml
+      #   with:
+      #     environment: ${{ inputs.environment }}
+      #     branch: ${{ inputs.branch }}
+      #     build-number: ${{ github.run_number }}
+
+      - name: upload artifacts
+        uses: actions/upload-artifact@v3.1.2
         with:
-          environment: ${{ inputs.environment }}
-          branch: ${{ inputs.branch }}
-          build-number: ${{ github.run_number }}
+          name: paragon_driver
+          path: paragon-driver/*
 
       - name: Output build information 88
         run: |
