@@ -27,7 +27,7 @@ jobs:
       
       - name: Zip the downloaded file
         working-directory: paragon-driver
-        run: zip "NTFS-15.10.592" ./*
+        run: zip "NTFS-15.10.592.zip" ./*
         
       # - name: reuse
       #   uses: ./.github/workflows/child-workflow.yml
