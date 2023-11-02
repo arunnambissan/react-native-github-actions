@@ -1,0 +1,27 @@
+name: Parent w
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: "Enter the new version of the release. Eg: 4.22.0"
+        required: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Output build information 001
+        run: |
+          echo "test abcd"
+
+      - name: reuse
+        uses: ./.github/workflows/child-workflow.yml
+        with:
+          environment: ${{ inputs.environment }}
+          branch: ${{ inputs.branch }}
+          build-number: ${{ github.run_number }}
+
+      - name: Output build information 88
+        run: |
+          echo "test efg"
