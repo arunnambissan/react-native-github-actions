@@ -15,6 +15,14 @@ jobs:
   release:
     runs-on: ubuntu-latest
     steps:
+
+      - name: test jq secrets
+        env:
+          GH_SECRETS: ${{ toJson(secrets) }}
+        run: |
+            GH_SECRETS = echo "$GH_SECRETS" | jq 'del(.TEST_TEST_)'
+            ./test_script.sh
+        
       - name: Checkout codebase (${{ github.ref_name }})
         uses: actions/checkout@v3
         
