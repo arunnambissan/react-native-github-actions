@@ -1,3 +1,4 @@
+echo "$GH_SECRETS"
 echo "direct access github secret" 
 echo $TEST_GITHUB_SECRET 
 echo "direct access github variable" 
