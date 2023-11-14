@@ -21,7 +21,7 @@ jobs:
       - name: Checkout codebase (${{ github.ref_name }})
         uses: actions/checkout@v3
 
-       - name: test jq secrets
+      - name: test jq secrets
         env:
           GH_SECRETS: ${{ toJson(secrets) }}
         run: |
