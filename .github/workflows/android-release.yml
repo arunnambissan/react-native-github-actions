@@ -8,6 +8,17 @@ on:
         type: environment
         required: true
 
+      build_android:
+        type: boolean
+        default: true
+        description: Android
+      build_ios:
+        type: boolean
+        default: true
+        description: iOS
+
+run-name: "Release #${{ github.run_number }} ${{ (inputs.build_android == true) && '#android' }}"
+
 jobs:
   build:
 
