@@ -17,7 +17,7 @@ on:
         default: true
         description: iOS
 
-run-name: "Release #${{ github.run_number }} ${{ (inputs.build_android == true) && '#android' }}"
+run-name: "Release #${{ github.run_number }} ${{ inputs.build_android == true && '#android' || '' }}"
 
 jobs:
   build:
